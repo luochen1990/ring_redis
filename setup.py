@@ -1,4 +1,3 @@
-import codecs
 import os
 import sys
 
@@ -109,7 +108,7 @@ NAME = "ring_redis"
 DESCRIPTION = "a lightweight, high available & extensible cache solution using redis"
 AUTHOR = "luo chen"
 AUTHOR_EMAIL = "luochen1990@gmail.com"
-URL = ""
+URL = "https://github.com/luochen1990/ring_redis"
 VERSION = "0.8.0"
 
 setup(

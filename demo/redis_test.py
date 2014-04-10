@@ -27,10 +27,13 @@ REDIS_CONF = {
 
 from ring_redis import redis_dict
 
-
 test = redis_dict(REDIS_CONF['group0'], prefix='test.', expire=20)
+
 test['a'] = 'abc'
 test['bc'] = 'def'
+
+print("test['a'] : %s" % (test['a']))
+print("test['bc'] : %s" % (test['bc']))
 
 print("len(test) : %s" % (len(test)))
 print("test.keys() : %s" % (test.keys()))
