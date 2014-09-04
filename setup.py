@@ -109,7 +109,7 @@ DESCRIPTION = "a lightweight, high available & extensible cache solution using r
 AUTHOR = "luo chen"
 AUTHOR_EMAIL = "luochen1990@gmail.com"
 URL = "https://github.com/luochen1990/ring_redis"
-VERSION = "0.8.0"
+VERSION = "0.9.0"
 
 setup(
 	name=NAME,
@@ -127,7 +127,7 @@ setup(
 		only_in_packages=False
 	),
 	classifiers=[
-		"Development Status :: 3 - Alpha",
+		"Development Status :: 4 - Beta",
 		#"Development Status :: 4 - Beta",
 		"Environment :: Web Environment",
 		"Intended Audience :: Developers",

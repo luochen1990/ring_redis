@@ -7,3 +7,4 @@ nohup.out
 log/*
 env/*
 dist/*
+build/

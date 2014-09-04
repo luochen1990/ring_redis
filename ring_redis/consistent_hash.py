@@ -1,7 +1,7 @@
 import collections
 import random
 import json
-from .utils.hash import md5
+from .utils.hash import crc32
 from .utils.binary_search import array_binary_search
 
 class hash_ring(collections.MutableMapping):
@@ -21,7 +21,7 @@ class hash_ring(collections.MutableMapping):
 		self.search = search
 
 	def __init__(self, **conf):
-		self.hashf = conf.get('hash_function', md5)
+		self.hashf = conf.get('hash_function', crc32)
 		self.nodes = conf.get('nodes', {})
 		self.reload_nodes()
 

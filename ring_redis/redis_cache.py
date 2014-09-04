@@ -5,7 +5,7 @@ import random
 import json
 import redis
 from .utils.weighter import Weighter
-from .utils.hash import md5
+from .utils.hash import crc32
 from .consistent_hash import hash_ring
 
 class RedisClusterUnavailable(Exception): pass
@@ -16,7 +16,7 @@ except NameError:
 	unicode = str
 
 class redis_dict(collections.MutableMapping):
-	def __init__(self, redis_confs, prefix='', key=str, expire=None, on_fail=None, on_node_ejected=None, on_node_rediscovered=None, retry_ratio=1e-2, hash_function=md5):
+	def __init__(self, redis_confs, prefix='', key=str, expire=None, on_fail=None, on_node_ejected=None, on_node_rediscovered=None, retry_ratio=1e-2, hash_function=crc32):
 		clients = {k: redis.StrictRedis(**v['connection']) for k, v in redis_confs.items()}
 		w = Weighter({k: v['capacity'] for k, v in redis_confs.items()}, max(len(redis_confs)*200, 2000))
 		#print clients
